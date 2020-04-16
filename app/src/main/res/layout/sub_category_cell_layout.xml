@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tool="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="category"
+            type="com.example.crispminds.models.categorydtos.CategoryDTO" />
+
+    </data>
+
+    <RelativeLayout
+        android:id="@+id/mainLayout"
+        android:layout_width="@dimen/space_90"
+        android:layout_height="@dimen/space_90"
+        android:layout_margin="@dimen/space_5"
+        app:backgroundUrl="@{category.documentGetDto.path}"
+        android:elevation="@dimen/space_5"
+        android:orientation="vertical">
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/space_70"
+            android:layout_gravity="center_horizontal"
+            android:padding="@dimen/space_10"
+            android:src="@drawable/ic_category_parenting"
+            app:imageUrl="@{category.documentGetDto.path}" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginStart="@dimen/space_10"
+            android:layout_marginEnd="@dimen/space_10"
+            android:layout_marginBottom="@dimen/space_5"
+            android:fontFamily="@font/proxima_nova_regular"
+            android:text="@{category.categoryName}"
+            android:textAlignment="center"
+            android:textColor="@color/colorWhite"
+            android:textSize="10dp"
+            tool:text="@string/category_parenting" />
+
+
+    </RelativeLayout>
+
+</layout>

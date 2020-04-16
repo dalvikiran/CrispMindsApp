@@ -1,0 +1,162 @@
+<resources>
+    <string name="app_name">CrispMinds</string>
+
+    <string name="username">Username</string>
+    <string name="fName">First Name</string>
+    <string name="lName">Last Name</string>
+    <string name="password">Password</string>
+    <string name="new_password">New Password</string>
+    <string name="forgot_password_heading">Forgot Password</string>
+    <string name="forgot_password">Forgot Password?</string>
+    <string name="login">Login</string>
+    <string name="dont_have_account">Don\'t have an account? Register</string>
+    <string name="terms_and_privacy_text">By creating an account you agree to \nout Terms of service and privacy policy.</string>
+
+    <string name="email">Email</string>
+    <string name="mobile">Mobile</string>
+    <string name="register">Register</string>
+    <string name="verify_otp">Verify OTP</string>
+    <string name="save_password">Save Password</string>
+    <string name="already_a_member">Already a member? Login</string>
+
+    <string name="send_otp">Send OTP</string>
+    <string name="enter_otp">Enter OTP</string>
+    <string name="otp">OTP</string>
+    <string name="resend_otp">Resend OTP</string>
+    <string name="otp_sent_message">OTP has been sent to your email</string>
+
+    <string name="set_password">Set Password</string>
+    <string name="confirm_password">Confirm Password</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="title_activity_dashboard">DashboardActivity</string>
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="nav_header_title">Android Studio</string>
+    <string name="nav_header_subtitle">android.studio@android.com</string>
+    <string name="nav_header_desc">Navigation header</string>
+    <string name="action_settings">Settings</string>
+
+    <string name="menu_home">Home</string>
+    <string name="menu_gallery">Gallery</string>
+    <string name="menu_slideshow">Slideshow</string>
+    <string name="menu_tools">Tools</string>
+    <string name="menu_share">Share</string>
+    <string name="menu_send">Send</string>
+
+    <string name="dashboard">Dashboard</string>
+
+
+    <string name="category_parenting">parenting</string>
+    <string name="category_finance">finance</string>
+    <string name="category_marriage">marriage</string>
+    <string name="category_career_counseling">career counseling</string>
+
+    <string name="home">Home</string>
+    <string name="videos">Videos</string>
+    <string name="coaches">Coaches</string>
+    <string name="journal">Journal</string>
+    <string name="profile">Profile</string>
+
+    <string name="videos_for_you">Videos for you</string>
+    <string name="coaches_for_you">Coaches for you</string>
+    <string name="lorem_ipsum">Lorem Ipsum refers to a dummy block of text that is often used in publishing and graphic design to fill gaps in the page before the actual words are put into the finished product</string>
+    <string name="lorem_ipsum1">Lorem Ipsum refers to a dummy block of text that is often used in publishing.</string>
+
+    <string name="title_activity_bottom_nav">BottomNavActivity</string>
+    <string name="title_dashboard">Dashboard</string>
+    <string name="title_notifications">Notifications</string>
+    <string name="lorem_ipsum_string">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</string>
+    <!--    <string name="videos_for_you">Videos for you</string>-->
+
+    <string name="about_the_coach">About The Coach</string>
+    <string name="specialization">Specialization</string>
+    <string name="certifications_and_awards">Certifications and Awards</string>
+    <string name="testimonials">Testimonials</string>
+
+    <string name="book_session">Book Session</string>
+    <string name="book_a_session">Book a Session</string>
+    <string name="book_a_session_new_line">Book a Session</string>
+    <string name="subscribe_plan">Subscribe Plan</string>
+    <string name="introduction">Introduction</string>
+    <string name="consultation">Consultation</string>
+    <string name="check_availability">Check Availability</string>
+    <string name="remark">Remark</string>
+    <string name="describe_your_concern">Please Describe your concern here for the coach.</string>
+    <string name="description">Description</string>
+
+    <string name="new_journal_entry">New Journal Entry</string>
+    <string name="date_and_time">Date and Time</string>
+    <string name="emotions">Emotions</string>
+
+    <string name="happy">Happy</string>
+    <string name="confused">Confused</string>
+    <string name="sad">Sad</string>
+    <string name="angry">Angry</string>
+    <string name="search_hint_string">Search</string>
+
+    <string name="journal_heading">Journal Heading</string>
+    <string name="heading_title">Heading Title</string>
+    <string name="categories">Categories</string>
+    <string name="your_entry">Your Entry</string>
+    <string name="type_journal">Type Journal</string>
+    <string name="save_entry">Save Entry</string>
+
+    <string name="select_date">Select Date</string>
+    <string name="select_time">Select Time</string>
+    <string name="select_start_time">Select Start Time</string>
+    <string name="select_end_time">Select End Time</string>
+
+    <string name="session">Session</string>
+    <string name="rewards">Reward</string>
+    <string name="invitation">Invitation</string>
+
+    <string name="my_session">My Session</string>
+    <string name="answer_earn">Answer and Earn</string>
+    <string name="events_workshop">Events and Workshop</string>
+    <string name="payment">Payment</string>
+    <string name="invite_friends_family">Invite Friends/Family</string>
+    <string name="crisp_store">Crisp Store</string>
+    <string name="crisp_corner">Crisp Corner</string>
+    <string name="setting">Setting</string>
+    <string name="logout">logout</string>
+
+    <string name="connect_with_experts">Connect with experts</string>
+    <string name="simplify_parenting">Simplify Parenting</string>
+    <string name="make_it_rewarding">Make it rewarding</string>
+    <string name="get_start">Get Start</string>
+    <string name="skip">Skip</string>
+    <string name="tag1">Tag 1</string>
+    <string name="tag2">Tag 2</string>
+    <string name="tag3">Tag 3</string>
+    <string name="kids">Kids</string>
+    <string name="add_child">Add Child</string>
+    <string name="add_family_member">Add family member</string>
+    <string name="title_activity_my_session">MySessionActivity</string>
+
+    <string name="session_created_successfully">Session created successfully</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+
+    <string name="select_your_areas_of_interest">Select your areas of interest</string>
+    <string name="select_services_to_your_interest">Select services to your interest</string>
+    <string name="select_your_most_frequent_expenses">Select your most frequent expenses for self and children are on.</string>
+    <string name="continue_">Continue...</string>
+    <string name="you_have_earned_120_stars">You Have Earned 120 Stars</string>
+    <string name="you_have_earned">You Have Earned</string>
+    <string name="stars">Stars</string>
+    <string name="stars_earned">Stars Earned</string>
+    <string name="stars_claimed">Stars Claimed</string>
+    <string name="utilized_your_reward_points">Utilized your reward points</string>
+    <string name="title_activity_forgot_password">ForgotPasswordActivity</string>
+    <!-- Strings used for fragments for navigation -->
+    <string name="first_fragment_label">First Fragment</string>
+    <string name="second_fragment_label">Second Fragment</string>
+    <string name="next">Next</string>
+    <string name="previous">Previous</string>
+
+    <string name="hello_first_fragment">Hello first fragment</string>
+    <string name="hello_second_fragment">Hello second fragment. Arg: %1$s</string>
+
+</resources>

@@ -1,0 +1,365 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tool="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="mySessionDTO"
+            type="com.example.crispminds.models.MySessionDTO" />
+    </data>
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/space_15"
+        android:layout_marginTop="@dimen/space_5"
+        android:layout_marginEnd="@dimen/space_15"
+        android:layout_marginBottom="@dimen/space_10"
+        android:elevation="@dimen/space_15">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <com.guanaj.easyswipemenulibrary.EasySwipeMenuLayout
+                android:id="@+id/easy_swipe_menu_layout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/space_5"
+                android:layout_marginBottom="@dimen/space_5"
+                app:contentView="@id/content_view"
+                app:rightMenuView="@id/right">
+
+
+                <LinearLayout
+                    android:id="@+id/content_view"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:paddingStart="@dimen/space_10"
+                    android:paddingTop="@dimen/space_10"
+                    android:paddingBottom="@dimen/space_5">
+
+
+                    <!-- Date -->
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/space_5"
+                        android:layout_marginEnd="@dimen/space_5"
+                        android:gravity="center_horizontal"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:id="@+id/month_txt"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="May"
+                            android:textSize="12sp" />
+
+                        <TextView
+                            android:id="@+id/day_txt"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/space_5"
+                            android:layout_marginBottom="@dimen/space_5"
+                            android:fontFamily="@font/proxima_nova_regular"
+                            android:text="@{mySessionDTO.date}"
+                            android:textColor="@color/colorPrimary"
+                            android:textSize="20sp"
+                            tool:text="21" />
+
+                        <TextView
+                            android:id="@+id/week_day_txt"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Fri"
+                            android:textSize="12sp" />
+                    </LinearLayout>
+
+                    <View
+                        android:layout_width="2dp"
+                        android:layout_height="match_parent"
+                        android:layout_marginStart="@dimen/space_10"
+                        android:layout_marginEnd="@dimen/space_10"
+                        android:background="@color/colorGray" />
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/space_5"
+                        android:layout_marginEnd="@dimen/space_5"
+                        android:layout_weight="1"
+                        android:orientation="vertical">
+
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="@dimen/space_5"
+                            android:layout_marginEnd="@dimen/space_5"
+                            android:orientation="horizontal">
+
+                            <LinearLayout
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:gravity="center"
+                                android:orientation="vertical">
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:fontFamily="@font/proxima_nova_regular"
+                                    android:text="Scheduled at"
+                                    android:textSize="12sp" />
+
+                                <LinearLayout
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:gravity="center_vertical"
+                                    android:orientation="horizontal">
+
+                                    <ImageView
+                                        android:layout_width="@dimen/space_15"
+                                        android:layout_height="@dimen/space_15"
+                                        android:src="@drawable/ic_clock" />
+
+                                    <TextView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_marginStart="@dimen/space_5"
+                                        android:fontFamily="@font/proxima_nova_regular"
+                                        android:text="@{mySessionDTO.scheduledAtTime}"
+                                        android:textSize="12sp"
+                                        tool:text="05:30" />
+
+                                </LinearLayout>
+
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_weight="1" />
+
+
+                            <LinearLayout
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:gravity="center"
+                                android:orientation="vertical">
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:fontFamily="@font/proxima_nova_regular"
+                                    android:text="Scheduled for"
+                                    android:textSize="12sp" />
+
+                                <TextView
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:fontFamily="@font/proxima_nova_regular"
+                                    android:text="@{mySessionDTO.scheduledForCoachName}"
+                                    android:textColor="@color/colorBlack"
+                                    android:textSize="12sp"
+                                    tool:text="Gary kirsten" />
+
+
+                            </LinearLayout>
+
+
+                        </LinearLayout>
+
+
+                        <View
+                            android:layout_width="match_parent"
+                            android:layout_height="2dp"
+                            android:layout_marginTop="@dimen/space_5"
+                            android:layout_marginBottom="@dimen/space_5"
+                            android:background="@color/colorGray" />
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="@dimen/space_5"
+                            android:layout_marginEnd="@dimen/space_5"
+                            android:orientation="vertical">
+
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:orientation="horizontal">
+
+                                <LinearLayout
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:gravity="center"
+                                    android:orientation="vertical">
+
+                                    <TextView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:fontFamily="@font/proxima_nova_regular"
+                                        android:text="Session of"
+                                        android:textSize="12sp" />
+
+                                    <TextView
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:ellipsize="end"
+                                        android:fontFamily="@font/proxima_nova_regular"
+                                        android:singleLine="true"
+                                        android:text="@{mySessionDTO.sessionOfCategoryName}"
+                                        android:textColor="@color/colorBlack"
+                                        android:textSize="12sp"
+                                        tool:text="Financing" />
+
+                                </LinearLayout>
+
+                                <LinearLayout
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="1" />
+
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginStart="@dimen/space_20"
+                                    android:background="@color/colorPrimary"
+                                    android:drawableStart="@drawable/ic_payment_white_24dp"
+                                    android:drawablePadding="@dimen/space_5"
+                                    android:fontFamily="@font/proxima_nova_regular"
+                                    android:gravity="center"
+                                    android:padding="@dimen/space_5"
+                                    android:src="@drawable/ic_clock"
+                                    android:text="Pay Now"
+                                    android:textColor="@color/colorWhite"
+                                    android:textSize="12sp" />
+
+
+                            </LinearLayout>
+
+
+                        </LinearLayout>
+
+
+                    </LinearLayout>
+
+                    <ImageView
+                        android:layout_width="@dimen/space_40"
+                        android:layout_height="@dimen/space_40"
+                        android:layout_gravity="center"
+                        android:src="@drawable/ic_keyboard_arrow_left_primary_24dp" />
+
+
+                    <FrameLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_marginEnd="-43dp"
+                        android:gravity="center">
+
+                        <ImageView
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:background="@drawable/ic_status_btn_blue"
+                            android:padding="@dimen/space_5" />
+
+                        <com.example.crispminds.utils.VerticalTextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:layout_marginTop="@dimen/space_5"
+                            android:fontFamily="@font/proxima_nova_regular"
+                            android:text="confirmed"
+                            android:textColor="@color/colorWhite" />
+
+                    </FrameLayout>
+
+
+                </LinearLayout>
+
+
+                <LinearLayout
+                    android:id="@+id/right"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center"
+                    android:background="@color/colorLightBlue"
+                    android:gravity="center"
+                    android:orientation="vertical"
+                    android:padding="@dimen/space_10">
+
+                    <ImageView
+                        android:layout_width="@dimen/space_15"
+                        android:layout_height="@dimen/space_15"
+                        android:src="@drawable/ic_edit_white" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="@dimen/space_20"
+                        android:fontFamily="@font/proxima_nova_regular"
+                        android:text="Reschedule"
+                        android:textColor="@color/colorWhite"
+                        android:textSize="10sp" />
+
+
+                    <ImageView
+                        android:layout_width="@dimen/space_15"
+                        android:layout_height="@dimen/space_15"
+                        android:src="@drawable/ic_delete_white" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/proxima_nova_regular"
+                        android:text="Cancel Booking"
+                        android:textColor="@color/colorWhite"
+                        android:textSize="10sp" />
+
+
+                </LinearLayout>
+
+            </com.guanaj.easyswipemenulibrary.EasySwipeMenuLayout>
+
+            <LinearLayout
+                android:id="@+id/subscription_layout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical" />
+
+            <LinearLayout
+                android:id="@+id/subscription_plan_txt_layout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/space_5"
+                android:gravity="center"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/proxima_nova_regular"
+                    android:text="Subscription Plan"
+                    android:textColor="@color/colorBlue"
+                    android:textSize="12sp" />
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/ic_keyboard_arrow_down_primary_24dp" />
+
+            </LinearLayout>
+
+
+        </LinearLayout>
+
+    </androidx.cardview.widget.CardView>
+
+</layout>

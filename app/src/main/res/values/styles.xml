@@ -1,0 +1,121 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+    </style>
+
+    <style name="AppTheme.NoActionBar">
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+        <item name="android:windowTranslucentNavigation">false</item>
+        <item name="android:windowTranslucentStatus">false</item>
+        <!--        <item name="android:statusBarColor">@android:color/transparent</item>-->
+        <item name="android:windowLightStatusBar">true
+        </item> <!-- Make status bar icons colour black -->
+        <!--<item name="android:textColorSecondary">@android:color/white</item>-->
+        <!--<item name="android:statusBarColor">@android:color/transparent</item>-->
+    </style>
+
+    <style name="AppTheme.Light" parent="Theme.AppCompat.Light.NoActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+    </style>
+
+
+    <style name="AppTheme.Splash">
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+        <item name="android:windowFullscreen">true</item>
+    </style>
+
+    <style name="whiteStatusBar" parent="AppTheme.Light">
+        <!--        <item name="colorPrimary">@color/colorWhite</item> &lt;!&ndash; Make toolbar colour white &ndash;&gt;-->
+        <item name="android:windowTranslucentStatus">false</item> <!-- Show status bar -->
+        <item name="android:statusBarColor">@android:color/transparent
+        </item> <!-- Make status bar colour white -->
+        <item name="android:windowLightStatusBar">true
+        </item> <!-- Make status bar icons colour black -->
+        <item name="drawerArrowStyle">@style/DrawerHamburgerStyle</item>
+    </style>
+
+    <style name="DrawerHamburgerStyle" parent="@style/Widget.AppCompat.DrawerArrowToggle">
+        <item name="spinBars">true</item>
+        <item name="color">@color/colorPrimary</item>
+    </style>
+
+    <style name="EditTextCommonStyle">
+        <item name="android:textColor">#000000</item>
+        <item name="android:textSize">14sp</item>
+        <item name="android:textStyle">normal</item>
+        <!--<item name="android:fontFamily">@font/opensans_regular</item>-->
+        <item name="android:layout_gravity">left</item>
+    </style>
+
+    <style name="AppTheme.NoActionBar.whiteStatusBar">
+        <item name="colorPrimary">@color/colorWhite</item> <!-- Make toolbar colour white -->
+        <item name="android:windowTranslucentStatus">false</item> <!-- Show status bar -->
+        <item name="android:statusBarColor">@android:color/white
+        </item> <!-- Make status bar colour white -->
+        <item name="android:windowLightStatusBar">true
+        </item> <!-- Make status bar icons colour black -->
+    </style>
+
+    <style name="AppTheme.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
+
+    <style name="AppTheme.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
+
+    <style name="AppTheme.NoActionBar.Textstyle" parent="TextAppearance.AppCompat.Widget.ActionBar.Title">
+        <item name="android:textSize">16sp</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textAllCaps">true</item>
+    </style>
+
+    <style name="CustomProgressBarTheme">
+
+        <!--        <item name="android:windowLightStatusBar" tools:targetApi="m">false</item>-->
+        <item name="android:windowLightStatusBar" tools:targetApi="m">false</item>
+
+        <item name="android:windowBackground">@android:color/transparent</item>
+
+    </style>
+
+
+    <style name="errorTextStyle">
+
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textSize">12sp</item>
+        <item name="android:textColor">@color/colorRed</item>
+        <item name="android:layout_marginTop">@dimen/space_5</item>
+        <item name="android:layout_marginStart">@dimen/space_10</item>
+        <item name="android:fontFamily">@font/proxima_nova_regular</item>
+
+    </style>
+
+    <style name="cardEditTextStyle">
+
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">@dimen/space_50</item>
+        <item name="android:fontFamily">@font/proxima_nova_regular</item>
+        <item name="android:background">@drawable/edit_text_background</item>
+        <item name="android:elevation">5dp</item>
+        <item name="android:layout_marginTop">@dimen/space_10</item>
+        <item name="android:layout_marginStart">@dimen/space_5</item>
+        <item name="android:layout_marginEnd">@dimen/space_5</item>
+        <item name="android:drawablePadding">@dimen/space_5</item>
+        <item name="android:paddingStart">@dimen/space_20</item>
+        <item name="android:paddingEnd">@dimen/space_20</item>
+        <item name="android:imeOptions">actionNext</item>
+        <item name="android:singleLine">true</item>
+
+
+    </style>
+
+
+</resources>

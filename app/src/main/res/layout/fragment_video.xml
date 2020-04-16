@@ -1,0 +1,257 @@
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <import type="android.view.View" />
+
+        <variable
+            name="viewModel"
+            type="com.example.crispminds.view.dashboard.viewmodel.VideoFragmentViewModel" />
+
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/video_sub_category_recycler_view"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal"
+                    android:paddingTop="@dimen/space_10"
+                    android:paddingBottom="@dimen/space_10"
+                    app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager" />
+
+
+                <!--
+
+                                <HorizontalScrollView
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:scrollbars="none">
+
+                                    <LinearLayout
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_margin="@dimen/space_10"
+                                        android:elevation="@dimen/space_5"
+                                        android:orientation="horizontal">
+
+                                        <LinearLayout
+                                            android:layout_width="@dimen/space_90"
+                                            android:layout_height="@dimen/space_90"
+                                            android:layout_margin="@dimen/space_10"
+                                            android:background="@drawable/rounded_corner_white_background"
+                                            android:elevation="@dimen/space_5"
+                                            android:orientation="vertical">
+
+                                            <ImageView
+                                                android:layout_width="match_parent"
+                                                android:layout_height="@dimen/space_50"
+                                                android:layout_gravity="center_horizontal"
+                                                android:padding="@dimen/space_10"
+                                                android:src="@drawable/ic_category_parenting" />
+
+                                            <TextView
+                                                android:layout_width="wrap_content"
+                                                android:layout_height="wrap_content"
+                                                android:layout_gravity="center_horizontal"
+                                                android:layout_marginStart="@dimen/space_5"
+                                                android:layout_marginEnd="@dimen/space_5"
+                                                android:text="@string/category_parenting"
+                                                android:textAlignment="center" />
+
+
+                                        </LinearLayout>
+
+                                        <LinearLayout
+                                            android:layout_width="@dimen/space_90"
+                                            android:layout_height="@dimen/space_90"
+                                            android:layout_margin="@dimen/space_10"
+                                            android:background="@drawable/rounded_corner_white_background"
+                                            android:elevation="@dimen/space_5"
+                                            android:orientation="vertical">
+
+                                            <ImageView
+                                                android:layout_width="match_parent"
+                                                android:layout_height="@dimen/space_50"
+                                                android:layout_gravity="center_horizontal"
+                                                android:padding="@dimen/space_10"
+                                                android:src="@drawable/ic_category_finance" />
+
+                                            <TextView
+                                                android:layout_width="wrap_content"
+                                                android:layout_height="wrap_content"
+                                                android:layout_gravity="center_horizontal"
+                                                android:layout_marginStart="@dimen/space_5"
+                                                android:layout_marginEnd="@dimen/space_5"
+                                                android:text="@string/category_finance"
+                                                android:textAlignment="center" />
+
+
+                                        </LinearLayout>
+
+                                        <LinearLayout
+                                            android:layout_width="@dimen/space_90"
+                                            android:layout_height="@dimen/space_90"
+                                            android:layout_margin="@dimen/space_10"
+                                            android:background="@drawable/rounded_corner_white_background"
+                                            android:elevation="@dimen/space_5"
+                                            android:orientation="vertical">
+
+                                            <ImageView
+                                                android:layout_width="match_parent"
+                                                android:layout_height="@dimen/space_50"
+                                                android:layout_gravity="center_horizontal"
+                                                android:padding="@dimen/space_10"
+                                                android:src="@drawable/ic_category_marriage" />
+
+                                            <TextView
+                                                android:layout_width="wrap_content"
+                                                android:layout_height="wrap_content"
+                                                android:layout_gravity="center_horizontal"
+                                                android:layout_marginStart="@dimen/space_5"
+                                                android:layout_marginEnd="@dimen/space_5"
+                                                android:text="@string/category_marriage"
+                                                android:textAlignment="center" />
+
+
+                                        </LinearLayout>
+
+                                        <LinearLayout
+                                            android:layout_width="@dimen/space_90"
+                                            android:layout_height="@dimen/space_90"
+                                            android:layout_margin="@dimen/space_10"
+                                            android:background="@drawable/rounded_corner_white_background"
+                                            android:elevation="@dimen/space_5"
+                                            android:orientation="vertical">
+
+                                            <ImageView
+                                                android:layout_width="match_parent"
+                                                android:layout_height="@dimen/space_50"
+                                                android:layout_gravity="center_horizontal"
+                                                android:padding="@dimen/space_10"
+                                                android:src="@drawable/ic_meeting" />
+
+                                            <TextView
+                                                android:layout_width="wrap_content"
+                                                android:layout_height="wrap_content"
+                                                android:layout_gravity="center_horizontal"
+                                                android:layout_marginStart="@dimen/space_5"
+                                                android:layout_marginEnd="@dimen/space_5"
+                                                android:text="@string/category_career_counseling"
+                                                android:textAlignment="center" />
+
+
+                                        </LinearLayout>
+
+                                    </LinearLayout>
+
+                                </HorizontalScrollView>
+
+
+                                -->
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="@color/colorPrimary" />
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:padding="@dimen/space_10">
+
+                    <TextView
+                        android:id="@+id/videos_for_you_textview"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/space_5"
+                        android:textSize="16sp"
+                        android:fontFamily="@font/proxima_nova_extra_bold"
+                        android:text="@string/videos_for_you"
+                        android:textColor="@color/colorBlack" />
+
+                    <TextView
+                        android:id="@+id/video_count_textview"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/videos_for_you_textview"
+                        android:layout_marginStart="@dimen/space_5"
+                        android:fontFamily="@font/proxima_nova_regular"
+                        android:text="@{viewModel.count + ` Videos`}"
+                        android:textColor="@color/colorGrayDark"
+                        tools:text="0 Videos" />
+
+                    <ImageView
+                        android:id="@+id/search_img"
+                        android:layout_width="@dimen/space_30"
+                        android:layout_height="@dimen/space_30"
+                        android:layout_alignParentEnd="true"
+                        android:layout_marginBottom="@dimen/space_5"
+                        android:onClick="@{()->viewModel.onSearchClick()}"
+                        android:padding="@dimen/space_5"
+                        android:src="@drawable/ic_journal_search" />
+
+                    <EditText
+                        android:id="@+id/search_layout"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/search_img"
+                        android:layout_margin="@dimen/space_10"
+                        android:background="@drawable/white_background_with_primary_stroke"
+                        android:gravity="center_vertical"
+                        android:hint="@string/search_hint_string"
+                        android:imeOptions="actionSearch"
+                        android:inputType="text"
+                        android:padding="@dimen/space_10"
+                        android:singleLine="false"
+                        android:text="@={viewModel.searchQueryString}"
+                        android:visibility="@{viewModel.searchLayoutVisible ? View.VISIBLE : View.GONE}" />
+
+
+                    <androidx.recyclerview.widget.RecyclerView
+                        android:id="@+id/video_recycler_view"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/search_layout"
+                        android:layout_marginTop="10dp"
+                        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager" />
+
+                    <!-- <LinearLayout
+                         android:layout_width="match_parent"
+                         android:layout_height="match_parent"
+                         android:layout_marginTop="@dimen/space_10"
+                         android:orientation="vertical"
+                         android:layout_below="@+id/video_count_textview">
+
+                         <include layout="@layout/video_cell_layout"/>
+                         <include layout="@layout/video_cell_layout"/>
+                         <include layout="@layout/video_cell_layout"/>
+                         <include layout="@layout/video_cell_layout"/>
+                         <include layout="@layout/video_cell_layout"/>
+                         <include layout="@layout/video_cell_layout"/>
+
+                     </LinearLayout>-->
+
+                </RelativeLayout>
+
+            </LinearLayout>
+
+        </ScrollView>
+
+    </LinearLayout>
+
+</layout>

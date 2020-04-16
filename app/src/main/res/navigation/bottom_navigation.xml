@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/bottom_navigation"
+    app:startDestination="@id/homeFragment">
+
+    <fragment
+        android:id="@+id/homeFragment"
+        android:name="com.example.crispminds.view.dashboard.fragments.HomeFragment"
+        android:label="@string/dashboard" >
+        <action
+            android:id="@+id/action_homeFragment_to_videoFragment"
+            app:destination="@id/videoFragment" />
+        <action
+            android:id="@+id/action_homeFragment_to_journalFragment"
+            app:destination="@id/journalFragment" />
+        <action
+            android:id="@+id/action_homeFragment_to_coachesFragment"
+            app:destination="@id/coachesFragment" />
+        <action
+            android:id="@+id/action_homeFragment_to_profileFragment"
+            app:destination="@id/profileFragment" />
+        <action
+            android:id="@+id/action_homeFragment_to_rewardsFragment"
+            app:destination="@id/rewardsFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/videoFragment"
+        android:name="com.example.crispminds.view.dashboard.fragments.VideoFragment"
+        android:label="@string/videos">
+        <action
+            android:id="@+id/action_videoFragment_to_videoDetailFragment"
+            app:destination="@id/videoDetailFragment" />
+        <action
+            android:id="@+id/action_videoFragment_to_profileFragment"
+            app:destination="@id/profileFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/coachesFragment"
+        android:name="com.example.crispminds.view.dashboard.fragments.CoachesFragment"
+        android:label="@string/coaches">
+        <action
+            android:id="@+id/action_coachesFragment_to_coachDetailsFragment"
+            app:destination="@id/coachDetailsFragment" />
+        <action
+            android:id="@+id/action_coachesFragment_to_profileFragment"
+            app:destination="@id/profileFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/journalFragment"
+        android:name="com.example.crispminds.view.dashboard.fragments.JournalFragment"
+        android:label="@string/journal">
+        <action
+            android:id="@+id/action_journalFragment_to_journalEntryFragment"
+            app:destination="@id/journalEntryFragment" />
+        <action
+            android:id="@+id/action_journalFragment_to_profileFragment"
+            app:destination="@id/profileFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/profileFragment"
+        android:name="com.example.crispminds.view.dashboard.fragments.ProfileFragment"
+        android:label="@string/profile" />
+    <fragment
+        android:id="@+id/videoDetailFragment"
+        android:name="com.example.crispminds.view.dashboard.fragments.VideoDetailFragment"
+        android:label="@string/videos" />
+    <fragment
+        android:id="@+id/coachDetailsFragment"
+        android:name="com.example.crispminds.view.dashboard.fragments.CoachDetailsFragment"
+        android:label="Coach Profile">
+        <action
+            android:id="@+id/action_coachDetailsFragment_to_bookSessionFragment"
+            app:destination="@id/bookSessionFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/bookSessionFragment"
+        android:name="com.example.crispminds.view.dashboard.fragments.BookSessionFragment"
+        android:label="@string/book_a_session" >
+        <action
+            android:id="@+id/action_bookSessionFragment_to_coachDetailsFragment"
+            app:destination="@id/coachDetailsFragment"
+            app:popUpTo="@+id/coachDetailsFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/journalEntryFragment"
+        android:name="com.example.crispminds.view.dashboard.fragments.JournalEntryFragment"
+        android:label="Journal"
+        tools:layout="@layout/fragment_journal_entry" >
+        <action
+            android:id="@+id/action_journalEntryFragment_to_journalFragment"
+            app:destination="@id/journalFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/rewardsFragment"
+        android:name="com.example.crispminds.view.dashboard.fragments.RewardsFragment"
+        android:label="Rewards" />
+</navigation>

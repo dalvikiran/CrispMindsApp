@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tool="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="certificateDetail"
+            type="com.example.crispminds.models.CertificationAndAwards" />
+    </data>
+
+    <LinearLayout
+        android:id="@+id/certificate_layout"
+        android:orientation="vertical"
+        android:layout_width="@dimen/space_120"
+        android:layout_height="wrap_content">
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/space_80"
+            android:layout_margin="@dimen/space_5"
+            android:layout_below="@+id/about_coach_text_view"
+            app:imageUrl="@{certificateDetail.certification_and_awards_Pics.path}"
+            android:src="@drawable/ic_angry_blue"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            tool:text="Certificate"
+            android:text="@{certificateDetail.certificateName}"
+            android:textAlignment="center" />
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            tool:text="16-12-2015"
+            android:text="@{certificateDetail.dateOfCertification}"
+            android:textAlignment="center"/>
+
+    </LinearLayout>
+
+
+</layout>

@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tool="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="coachDetails"
+            type="com.example.crispminds.models.CoachDTO" />
+    </data>
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/space_3"
+        android:layout_marginTop="@dimen/space_3"
+        android:layout_marginEnd="@dimen/space_3"
+        android:layout_marginBottom="@dimen/space_10"
+        android:elevation="@dimen/space_10">
+
+        <LinearLayout
+            android:id="@+id/main_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:elevation="5dp"
+            android:padding="@dimen/space_10">
+
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <ImageView
+                    android:id="@+id/coach_imageview"
+                    android:layout_width="@dimen/space_70"
+                    android:layout_height="@dimen/space_70"
+                    android:layout_gravity="center_horizontal"
+                    android:background="@drawable/rounded_corner_white_background"
+                    android:padding="@dimen/space_5"
+                    android:src="@drawable/ic_category_marriage"
+                    app:imageUrl="@{coachDetails.coachProfileDto.path}" />
+
+
+                <TextView
+                    android:id="@+id/coach_name_textview"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginStart="@dimen/space_10"
+                    android:layout_toEndOf="@+id/coach_imageview"
+                    android:fontFamily="@font/proxima_nova_bold"
+                    android:text="@{coachDetails.coachName}"
+                    tool:text="Vaibhav Kanyalkar" />
+
+                <TextView
+                    android:id="@+id/coach_description_textview"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/coach_name_textview"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginStart="@dimen/space_10"
+                    android:layout_toEndOf="@+id/coach_imageview"
+                    android:ellipsize="end"
+                    android:fontFamily="@font/proxima_nova_regular"
+                    android:maxLines="2"
+                    android:text="@{coachDetails.coachIntro}"
+                    android:textSize="12dp"
+                    tool:text="@string/lorem_ipsum1" />
+
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:orientation="horizontal">
+
+                    <ImageView
+                        android:layout_width="@dimen/space_15"
+                        android:layout_height="@dimen/space_15"
+                        android:layout_gravity="center"
+                        android:src="@drawable/ic_favorite" />
+
+                    <TextView
+                        android:id="@+id/likes_textview"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_marginStart="@dimen/space_5"
+                        android:fontFamily="@font/proxima_nova_regular"
+                        android:text="@{coachDetails.totalLikes}"
+                        android:textSize="12dp"
+                        tool:text="210" />
+
+                </LinearLayout>
+
+            </RelativeLayout>
+
+
+        </LinearLayout>
+
+    </androidx.cardview.widget.CardView>
+
+</layout>

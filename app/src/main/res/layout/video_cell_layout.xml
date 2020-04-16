@@ -1,0 +1,189 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="videoDetails"
+            type="com.example.crispminds.models.videosdto.VideoMasterDTO" />
+    </data>
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/space_3"
+        android:layout_marginTop="@dimen/space_3"
+        android:layout_marginEnd="@dimen/space_3"
+        android:layout_marginBottom="@dimen/space_10"
+        android:elevation="10dp">
+
+
+        <LinearLayout
+            android:id="@+id/main_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:elevation="5dp"
+            android:orientation="horizontal"
+            android:padding="@dimen/space_5">
+
+            <ImageView
+                android:id="@+id/video_imageview"
+                youtubeVideoThumbnail="@{videoDetails.videoLinkId}"
+                android:layout_width="@dimen/space_80"
+                android:layout_height="@dimen/space_80"
+                android:layout_gravity="center_vertical"
+                android:background="@drawable/rounded_corner_white_background"
+                android:padding="@dimen/space_5" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_marginStart="@dimen/space_10"
+                android:orientation="vertical">
+
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:ellipsize="end"
+                    android:fontFamily="@font/proxima_nova_bold"
+                    android:singleLine="true"
+                    android:text="@{videoDetails.videoTitle}"
+                    android:textColor="@color/colorBlack"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/videos_description_textview"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/space_5"
+                    android:layout_marginBottom="@dimen/space_15"
+                    android:ellipsize="end"
+                    android:fontFamily="@font/proxima_nova_regular"
+                    android:maxLines="2"
+                    android:text="@{videoDetails.videoDesc}"
+                    android:textColor="@color/colorText"
+                    android:textSize="12sp" />
+
+                <!--  <LinearLayout
+                      android:id="@+id/time_layout"
+                      android:layout_width="wrap_content"
+                      android:layout_height="wrap_content"
+                      android:layout_alignParentEnd="true"
+                      android:layout_marginStart="@dimen/space_10"
+                      android:orientation="horizontal">
+
+                      <ImageView
+                          android:layout_width="@dimen/space_15"
+                          android:layout_height="@dimen/space_15"
+                          android:layout_gravity="center"
+                          android:src="@drawable/ic_clock" />
+
+                      <TextView
+                          android:id="@+id/time_textview"
+                          android:layout_width="wrap_content"
+                          android:layout_height="wrap_content"
+                          android:layout_gravity="center"
+                          android:layout_marginStart="@dimen/space_3"
+                          android:fontFamily="@font/proxima_nova_regular"
+                          android:text="@{videoDetails.video_uploded_time}"
+                          android:textColor="@color/colorText"
+                          android:textSize="12dp" />
+
+                  </LinearLayout>-->
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:orientation="horizontal">
+
+                        <ImageView
+                            android:layout_width="@dimen/space_15"
+                            android:layout_height="@dimen/space_15"
+                            android:layout_gravity="center"
+                            android:src="@drawable/ic_calender" />
+
+                        <TextView
+                            android:id="@+id/date_textview"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_marginStart="@dimen/space_5"
+                            android:fontFamily="@font/proxima_nova_regular"
+                            android:text="@{videoDetails.date}"
+                            android:textSize="12sp"
+                            tools:text="10-12-19" />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:layout_marginStart="@dimen/space_10"
+                        android:layout_marginEnd="@dimen/space_10"
+                        android:orientation="horizontal">
+
+                        <ImageView
+                            android:layout_width="@dimen/space_15"
+                            android:layout_height="@dimen/space_15"
+                            android:layout_gravity="center"
+                            android:src="@drawable/ic_clock" />
+
+                        <TextView
+                            android:id="@+id/time_textview"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_marginStart="@dimen/space_5"
+                            android:fontFamily="@font/proxima_nova_regular"
+                            android:text="@{videoDetails.time}"
+                            android:textSize="12sp"
+                            tools:text="12:00 am" />
+
+                    </LinearLayout>
+
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:orientation="horizontal">
+
+                        <ImageView
+                            android:layout_width="@dimen/space_15"
+                            android:layout_height="@dimen/space_15"
+                            android:layout_gravity="center"
+                            android:src="@drawable/ic_favorite" />
+
+                        <TextView
+                            android:id="@+id/likes_textview"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_marginStart="@dimen/space_5"
+                            android:fontFamily="@font/proxima_nova_regular"
+                            android:text="@{videoDetails.videoLikesCount}"
+                            android:textSize="12dp"
+                            tools:text="22" />
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+
+        </LinearLayout>
+
+    </androidx.cardview.widget.CardView>
+
+</layout>

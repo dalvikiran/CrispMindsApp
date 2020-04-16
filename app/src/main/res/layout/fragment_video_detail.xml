@@ -1,0 +1,264 @@
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+
+    <data>
+
+        <import type="android.view.View" />
+
+        <variable
+            name="viewModel"
+            type="com.example.crispminds.view.dashboard.viewmodel.VideoDetailsFragmentViewModel" />
+
+    </data>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <com.pierfrancescosoffritti.androidyoutubeplayer.core.player.views.YouTubePlayerView
+                android:id="@+id/youtube_player_view"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:autoPlay="true"
+                app:layout_constraintTop_toTopOf="parent"
+                app:showFullScreenButton="false"
+                app:videoId=""
+                tools:layout_editor_absoluteX="73dp" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="@dimen/space_10">
+
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginStart="@dimen/space_5"
+                    android:layout_marginTop="@dimen/space_30"
+                    android:layout_marginBottom="@dimen/space_10"
+                    android:gravity="end|center_vertical"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:id="@+id/video_title_id"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_toStartOf="@+id/earn_points_layout"
+                        android:fontFamily="@font/proxima_nova_bold"
+                        android:text="@{viewModel.videoMasterDTO.videoTitle}"
+                        android:textColor="@color/colorBlack"
+                        android:textSize="16sp"
+                        tools:text="Title" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/video_title_id"
+                        android:layout_marginTop="@dimen/space_5"
+                        android:text="@{viewModel.videoMasterDTO.coachName}"
+                        android:textColor="@color/colorPrimary"
+                        android:textSize="12sp" />
+
+                    <androidx.cardview.widget.CardView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_toLeftOf="@+id/earn_points_layout"
+                        android:elevation="@dimen/space_10"
+                        android:visibility="@{viewModel.sharingOptionsVisibility ? View.VISIBLE : View.GONE}">
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal">
+
+                            <ImageView
+                                android:layout_width="@dimen/space_30"
+                                android:layout_height="@dimen/space_30"
+                                android:padding="@dimen/space_5"
+                                app:srcCompat="@drawable/ic_facebook" />
+
+                            <ImageView
+                                android:layout_width="@dimen/space_30"
+                                android:layout_height="@dimen/space_30"
+                                android:layout_centerHorizontal="true"
+                                android:padding="@dimen/space_5"
+                                app:srcCompat="@drawable/ic_instagram" />
+
+                            <ImageView
+                                android:layout_width="@dimen/space_30"
+                                android:layout_height="@dimen/space_30"
+                                android:layout_centerHorizontal="true"
+                                android:padding="@dimen/space_5"
+                                app:srcCompat="@drawable/ic_twitter" />
+
+                        </LinearLayout>
+
+                    </androidx.cardview.widget.CardView>
+
+
+                    <RelativeLayout
+                        android:id="@+id/earn_points_layout"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentEnd="true"
+                        android:onClick="@{()-> viewModel.onRewardClick()}">
+
+                        <ImageView
+                            android:id="@+id/earn_start_image_view"
+                            android:layout_width="@dimen/space_30"
+                            android:layout_height="@dimen/space_30"
+                            android:layout_centerHorizontal="true"
+                            app:srcCompat="@drawable/ic_rewards" />
+
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@+id/earn_start_image_view"
+                            android:layout_marginEnd="@dimen/space_5"
+                            android:fontFamily="@font/proxima_nova_regular"
+                            android:text="Earn Points"
+                            android:textColor="@color/colorBlack"
+                            android:textSize="11sp" />
+
+
+                    </RelativeLayout>
+
+                </RelativeLayout>
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginBottom="@dimen/space_5"
+                    android:gravity="end|center_vertical"
+                    android:orientation="horizontal">
+
+                    <ImageView
+                        android:layout_width="@dimen/space_15"
+                        android:layout_height="@dimen/space_15"
+                        android:layout_marginEnd="@dimen/space_5"
+                        app:srcCompat="@drawable/ic_clock" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="@dimen/space_20"
+                        android:fontFamily="@font/proxima_nova_regular"
+                        android:text="@{viewModel.videoMasterDTO.time}"
+                        android:textSize="12sp"
+                        tools:text="08:00 AM" />
+
+                    <ImageView
+                        android:layout_width="@dimen/space_15"
+                        android:layout_height="@dimen/space_15"
+                        android:layout_marginEnd="@dimen/space_5"
+                        android:fontFamily="@font/proxima_nova_regular"
+                        app:srcCompat="@drawable/ic_calender" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="@dimen/space_20"
+                        android:fontFamily="@font/proxima_nova_regular"
+                        android:text="@{viewModel.videoMasterDTO.date}"
+                        android:textSize="12sp"
+                        tools:text="02-05-19" />
+
+                    <ImageView
+                        android:layout_width="@dimen/space_15"
+                        android:layout_height="@dimen/space_15"
+                        android:layout_marginEnd="@dimen/space_5"
+                        android:fontFamily="@font/proxima_nova_regular"
+                        app:srcCompat="@drawable/ic_favorite" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="@dimen/space_5"
+                        android:fontFamily="@font/proxima_nova_regular"
+                        android:text="@{viewModel.videoMasterDTO.videoLikesCount}"
+                        android:textSize="12sp"
+                        tools:text="200" />
+
+
+                </LinearLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/space_2"
+                    android:layout_marginBottom="@dimen/space_5"
+                    android:background="@color/colorGrayDark" />
+
+                <TextView
+                    android:id="@+id/text_home"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/space_5"
+                    android:layout_marginEnd="@dimen/space_5"
+                    android:fontFamily="@font/proxima_nova_regular"
+                    android:text="@{viewModel.videoMasterDTO.videoDesc}"
+                    android:textColor="@color/colorBlack"
+                    tools:text="@string/lorem_ipsum" />
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/space_20"
+                    android:gravity="end"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/space_10"
+                        android:layout_marginEnd="@dimen/space_10"
+                        android:background="@drawable/rounded_background_gray_with_border"
+                        android:padding="@dimen/space_5"
+                        android:paddingStart="@dimen/space_10"
+                        android:paddingEnd="@dimen/space_10"
+                        android:text="@string/tag1" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/space_10"
+                        android:layout_marginEnd="@dimen/space_10"
+                        android:background="@drawable/rounded_background_gray_with_border"
+                        android:padding="@dimen/space_5"
+                        android:paddingStart="@dimen/space_10"
+                        android:paddingEnd="@dimen/space_10"
+                        android:text="@string/tag2" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/space_10"
+                        android:background="@drawable/rounded_background_gray_with_border"
+                        android:padding="@dimen/space_5"
+                        android:paddingStart="@dimen/space_10"
+                        android:paddingEnd="@dimen/space_10"
+                        android:text="@string/tag3" />
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </ScrollView>
+
+
+</layout>

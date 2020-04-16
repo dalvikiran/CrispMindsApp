@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <RelativeLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="250dp">
+
+        <com.pierfrancescosoffritti.androidyoutubeplayer.core.player.views.YouTubePlayerView
+            android:id="@+id/youtube_player_view"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:autoPlay="true"
+            app:layout_constraintTop_toTopOf="parent"
+            app:showFullScreenButton="false"
+            app:videoId="HDqia0fS2wE"
+            tools:layout_editor_absoluteX="73dp" />
+
+        <ImageView
+            android:id="@+id/close_click_image_view"
+            android:layout_width="@dimen/space_30"
+            android:layout_height="@dimen/space_30"
+            android:src="@drawable/ic_close"
+            android:layout_alignParentRight="true"
+            android:layout_margin="@dimen/space_5"/>
+
+    </RelativeLayout>
+</layout>

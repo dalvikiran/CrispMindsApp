@@ -1,0 +1,256 @@
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="homeViewModel"
+            type="com.example.crispminds.view.dashboard.viewmodel.HomeFragmentViewModel" />
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:background="@drawable/white_background_with_primary_stroke">
+
+        <ScrollView
+           android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+
+                <LinearLayout
+                    android:id="@+id/layout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/space_10">
+
+                    <androidx.viewpager.widget.ViewPager
+                        android:id="@+id/offer_view_pager"
+                        android:layout_width="match_parent"
+                        android:layout_height="150dp"
+                        android:layout_marginTop="@dimen/space_10"
+                        android:layout_marginBottom= "@dimen/space_10"
+                        app:layout_behavior="@string/appbar_scrolling_view_behavior"/>
+
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical"
+                    android:layout_marginTop="@dimen/space_20">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:layout_marginStart="@dimen/space_20"
+                        android:layout_marginEnd="@dimen/space_20">
+
+                        <RelativeLayout
+                            android:layout_width="0dp"
+                            android:layout_height="150dp"
+                            android:layout_weight="1"
+                            android:layout_margin="@dimen/space_10"
+                            android:onClick="@{()-> homeViewModel.onCoachesClick()}"
+                            android:background="@drawable/ic_sub_category_dark_blue_bg">
+
+                            <ImageView
+                                android:layout_width="@dimen/space_100"
+                                android:layout_height="@dimen/space_100"
+                                android:layout_centerHorizontal="true"
+                                android:src="@drawable/ic_coaches"
+                                android:layout_marginTop="@dimen/space_10"
+                                />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:textColor="@color/colorWhite"
+                                android:layout_alignParentBottom="true"
+                                android:text="@string/coaches"
+                                android:textSize="14dp"
+                                android:layout_centerHorizontal="true"
+                                android:layout_marginBottom="@dimen/space_20"/>
+
+                        </RelativeLayout>
+
+                        <RelativeLayout
+                            android:layout_width="0dp"
+                            android:layout_height="150dp"
+                            android:layout_weight="1"
+                            android:onClick="@{()-> homeViewModel.onSessionClick()}"
+                            android:layout_margin="@dimen/space_10"
+                            android:background="@drawable/ic_sub_category_skyblue_bg">
+
+                            <ImageView
+                                android:layout_width="@dimen/space_100"
+                                android:layout_height="@dimen/space_100"
+                                android:layout_centerHorizontal="true"
+                                android:src="@drawable/ic_session"
+                                android:padding="@dimen/space_10"
+                                android:layout_marginTop="@dimen/space_10"
+                                />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:textColor="@color/colorWhite"
+                                android:layout_alignParentBottom="true"
+                                android:text="@string/session"
+                                android:textSize="14dp"
+                                android:layout_centerHorizontal="true"
+                                android:layout_marginBottom="@dimen/space_20"/>
+
+                        </RelativeLayout>
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:layout_marginStart="@dimen/space_20"
+                        android:layout_marginEnd="@dimen/space_20">
+
+                        <RelativeLayout
+                            android:layout_width="0dp"
+                            android:layout_height="150dp"
+                            android:layout_weight="1"
+                            android:layout_margin="@dimen/space_10"
+                            android:onClick="@{()-> homeViewModel.onVideoClick()}"
+                            android:background="@drawable/ic_sub_category_pink_bg">
+
+                            <ImageView
+                                android:layout_width="@dimen/space_100"
+                                android:layout_height="@dimen/space_100"
+                                android:layout_centerHorizontal="true"
+                                android:src="@drawable/ic_video_yellow"
+                                android:padding="@dimen/space_10"
+                                android:layout_marginTop="@dimen/space_10"
+                                />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:textColor="@color/colorWhite"
+                                android:layout_alignParentBottom="true"
+                                android:text="@string/videos"
+                                android:textSize="14dp"
+                                android:layout_centerHorizontal="true"
+                                android:layout_marginBottom="@dimen/space_20"/>
+
+                        </RelativeLayout>
+
+                        <RelativeLayout
+                            android:layout_width="0dp"
+                            android:layout_height="150dp"
+                            android:layout_weight="1"
+                            android:layout_margin="@dimen/space_10"
+                            android:onClick="@{()-> homeViewModel.onJournalClick()}"
+                            android:background="@drawable/ic_sub_category_voilet_bg">
+
+                            <ImageView
+                                android:layout_width="@dimen/space_100"
+                                android:layout_height="@dimen/space_100"
+                                android:layout_centerHorizontal="true"
+                                android:src="@drawable/ic_journal"
+                                android:padding="@dimen/space_10"
+                                android:layout_marginTop="@dimen/space_10"
+                                />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:textColor="@color/colorWhite"
+                                android:layout_alignParentBottom="true"
+                                android:text="@string/journal"
+                                android:textSize="14dp"
+                                android:layout_centerHorizontal="true"
+                                android:layout_marginBottom="@dimen/space_20"/>
+
+                        </RelativeLayout>
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:layout_marginStart="@dimen/space_20"
+                        android:layout_marginEnd="@dimen/space_20">
+
+                        <RelativeLayout
+                            android:layout_width="0dp"
+                            android:layout_height="150dp"
+                            android:layout_weight="1"
+                            android:layout_margin="@dimen/space_10"
+                            android:onClick="@{()->homeViewModel.onRewardsClick()}"
+                            android:background="@drawable/ic_sub_category_orang_bg">
+
+                            <ImageView
+                                android:layout_width="@dimen/space_100"
+                                android:layout_height="@dimen/space_100"
+                                android:layout_centerHorizontal="true"
+                                android:src="@drawable/ic_rewards"
+                                android:layout_marginTop="@dimen/space_20"
+                                />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:textColor="@color/colorWhite"
+                                android:layout_alignParentBottom="true"
+                                android:text="@string/rewards"
+                                android:textSize="14dp"
+                                android:layout_centerHorizontal="true"
+                                android:layout_marginBottom="@dimen/space_20"/>
+
+                        </RelativeLayout>
+
+                        <RelativeLayout
+                            android:layout_width="0dp"
+                            android:layout_height="150dp"
+                            android:layout_weight="1"
+                            android:layout_margin="@dimen/space_10"
+                            android:background="@drawable/ic_sub_category_green_bg">
+
+                            <ImageView
+                                android:layout_width="@dimen/space_100"
+                                android:layout_height="@dimen/space_100"
+                                android:layout_centerHorizontal="true"
+                                android:src="@drawable/ic_email_fill"
+                                android:padding="@dimen/space_15"
+                                android:layout_marginTop="@dimen/space_10"
+                                />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:textColor="@color/colorWhite"
+                                android:layout_alignParentBottom="true"
+                                android:text="@string/invitation"
+                                android:textSize="14dp"
+                                android:layout_centerHorizontal="true"
+                                android:layout_marginBottom="@dimen/space_20"/>
+
+                        </RelativeLayout>
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+        </ScrollView>
+
+    </LinearLayout>
+
+</layout>

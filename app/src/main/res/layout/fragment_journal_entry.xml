@@ -1,0 +1,457 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context=".view.dashboard.fragments.JournalEntryFragment">
+
+    <data>
+
+        <import type="android.view.View" />
+
+        <variable
+            name="journalFragmentViewModel"
+            type="com.example.crispminds.view.dashboard.viewmodel.JournalFragmentViewModel" />
+    </data>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/space_20"
+                android:fontFamily="@font/proxima_nova_regular"
+                android:text="@{journalFragmentViewModel.journalDetailsTitleString}"
+                android:textSize="14sp" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@color/colorGray" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/space_20"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/proxima_nova_regular"
+                    android:text="@string/date_and_time"
+                    android:textSize="12dp" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <EditText
+                        selectDate="@{journalFragmentViewModel.date}"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="@dimen/space_10"
+                        android:layout_weight="1"
+                        android:drawableEnd="@drawable/ic_calender"
+                        android:focusable="false"
+                        android:fontFamily="@font/proxima_nova_regular"
+                        android:hint="31-Dec-2019"
+                        android:text="@{journalFragmentViewModel.onDateClick}"
+                        android:textSize="12sp" />
+
+                    <EditText
+                        endTime="@{journalFragmentViewModel.endTime}"
+                        startTime="@{journalFragmentViewModel.startTime}"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/space_10"
+                        android:layout_weight="1"
+                        android:drawableEnd="@drawable/ic_access_time_primary_24dp"
+                        android:focusable="false"
+                        android:fontFamily="@font/proxima_nova_regular"
+                        android:hint="08:00-09:00 AM"
+                        android:text="@{journalFragmentViewModel.time}"
+                        android:textSize="12sp" />
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/space_20"
+                    android:layout_marginTop="@dimen/space_5"
+                    android:layout_marginRight="@dimen/space_20"
+                    android:layout_marginBottom="@dimen/space_5"
+                    android:text="@string/emotions"
+                    android:textSize="12dp" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:paddingTop="@dimen/space_5"
+                    android:paddingBottom="@dimen/space_5">
+
+                    <LinearLayout
+                        android:id="@+id/happy_layout"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/space_20"
+                        android:gravity="center"
+                        android:onClick="@{()->journalFragmentViewModel.onHappyLayoutClick()}"
+                        android:orientation="vertical">
+
+                        <ImageView
+                            drawable="@{journalFragmentViewModel.journalHappyImage}"
+                            android:layout_width="@dimen/space_70"
+                            android:layout_height="@dimen/space_70"
+                            android:gravity="center"
+                            android:src="@drawable/ic_happy_yellow" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/proxima_nova_regular"
+                            android:gravity="center"
+                            android:text="HAPPY" />
+
+                    </LinearLayout>
+
+
+                    <LinearLayout
+                        android:id="@+id/confused_layout"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/space_10"
+                        android:gravity="center"
+                        android:onClick="@{()->journalFragmentViewModel.onConfusedLayoutClick()}"
+                        android:orientation="vertical">
+
+                        <ImageView
+                            drawable="@{journalFragmentViewModel.journalConfusedImage}"
+                            android:layout_width="@dimen/space_70"
+                            android:layout_height="@dimen/space_70"
+                            android:src="@drawable/ic_confused_yellow" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/proxima_nova_regular"
+                            android:gravity="center"
+                            android:text="CONFUSED" />
+
+                    </LinearLayout>
+
+
+                    <LinearLayout
+                        android:id="@+id/sad_layout"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/space_10"
+                        android:layout_marginEnd="@dimen/space_10"
+                        android:gravity="center"
+                        android:onClick="@{()->journalFragmentViewModel.onSadLayoutClick()}"
+                        android:orientation="vertical">
+
+                        <ImageView
+                            drawable="@{journalFragmentViewModel.journalSadImage}"
+                            android:layout_width="@dimen/space_70"
+                            android:layout_height="@dimen/space_70"
+                            android:src="@drawable/ic_sad_yellow" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/proxima_nova_regular"
+                            android:gravity="center"
+                            android:text="SAD" />
+
+                    </LinearLayout>
+
+
+                    <LinearLayout
+                        android:id="@+id/angry_layout"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:onClick="@{()->journalFragmentViewModel.onAngryLayoutClick()}"
+                        android:orientation="vertical">
+
+                        <ImageView
+                            drawable="@{journalFragmentViewModel.journalAngryImage}"
+                            android:layout_width="@dimen/space_70"
+                            android:layout_height="@dimen/space_70"
+                            android:src="@drawable/ic_angry_yellow" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/proxima_nova_regular"
+                            android:gravity="center"
+                            android:text="ANGRY" />
+
+                    </LinearLayout>
+
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/space_20"
+                android:layout_marginTop="@dimen/space_5"
+                android:layout_marginRight="@dimen/space_20"
+                android:layout_marginBottom="@dimen/space_5"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/proxima_nova_regular"
+                    android:text="@string/journal_heading"
+                    android:textSize="12sp" />
+
+                <EditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/space_5"
+                    android:layout_marginEnd="@dimen/space_10"
+                    android:fontFamily="@font/proxima_nova_regular"
+                    android:hint="@string/heading_title"
+                    android:text="@={journalFragmentViewModel.journalHeadingString}" />
+
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/space_20"
+                    android:layout_marginTop="@dimen/space_5"
+                    android:layout_marginRight="@dimen/space_20"
+                    android:layout_marginBottom="@dimen/space_5"
+                    android:text="@string/categories"
+                    android:textSize="12dp" />
+
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/journal_category_recycler_view"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/space_10"
+                    android:background="@color/colorGrayLight"
+                    android:orientation="horizontal"
+                    app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager" />
+
+                <!--
+
+                                <HorizontalScrollView
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:scrollbars="none">
+
+                                    <LinearLayout
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_marginTop="@dimen/space_10"
+                                        android:layout_marginEnd="@dimen/space_10"
+                                        android:layout_marginBottom="@dimen/space_10"
+                                        android:background="@color/colorGrayLight"
+                                        android:elevation="@dimen/space_5"
+                                        android:orientation="horizontal">
+
+                                        <LinearLayout
+                                            android:layout_width="@dimen/space_90"
+                                            android:layout_height="@dimen/space_90"
+                                            android:layout_margin="@dimen/space_10"
+                                            android:background="@drawable/rounded_corner_white_background"
+                                            android:elevation="@dimen/space_5"
+                                            android:orientation="vertical">
+
+                                            <ImageView
+                                                android:layout_width="match_parent"
+                                                android:layout_height="@dimen/space_50"
+                                                android:layout_gravity="center_horizontal"
+                                                android:padding="@dimen/space_10"
+                                                android:src="@drawable/ic_category_parenting" />
+
+                                            <TextView
+                                                android:layout_width="wrap_content"
+                                                android:layout_height="wrap_content"
+                                                android:layout_gravity="center_horizontal"
+                                                android:layout_marginStart="@dimen/space_5"
+                                                android:layout_marginEnd="@dimen/space_5"
+                                                android:text="@string/category_parenting"
+                                                android:textAlignment="center" />
+
+
+                                        </LinearLayout>
+
+                                        <LinearLayout
+                                            android:layout_width="@dimen/space_90"
+                                            android:layout_height="@dimen/space_90"
+                                            android:layout_margin="@dimen/space_10"
+                                            android:background="@drawable/rounded_corner_white_background"
+                                            android:elevation="@dimen/space_5"
+                                            android:orientation="vertical">
+
+                                            <ImageView
+                                                android:layout_width="match_parent"
+                                                android:layout_height="@dimen/space_50"
+                                                android:layout_gravity="center_horizontal"
+                                                android:padding="@dimen/space_10"
+                                                android:src="@drawable/ic_category_finance" />
+
+                                            <TextView
+                                                android:layout_width="wrap_content"
+                                                android:layout_height="wrap_content"
+                                                android:layout_gravity="center_horizontal"
+                                                android:layout_marginStart="@dimen/space_5"
+                                                android:layout_marginEnd="@dimen/space_5"
+                                                android:text="@string/category_finance"
+                                                android:textAlignment="center" />
+
+
+                                        </LinearLayout>
+
+                                        <LinearLayout
+                                            android:layout_width="@dimen/space_90"
+                                            android:layout_height="@dimen/space_90"
+                                            android:layout_margin="@dimen/space_10"
+                                            android:background="@drawable/rounded_corner_white_background"
+                                            android:elevation="@dimen/space_5"
+                                            android:orientation="vertical">
+
+                                            <ImageView
+                                                android:layout_width="match_parent"
+                                                android:layout_height="@dimen/space_50"
+                                                android:layout_gravity="center_horizontal"
+                                                android:padding="@dimen/space_10"
+                                                android:src="@drawable/ic_category_marriage" />
+
+                                            <TextView
+                                                android:layout_width="wrap_content"
+                                                android:layout_height="wrap_content"
+                                                android:layout_gravity="center_horizontal"
+                                                android:layout_marginStart="@dimen/space_5"
+                                                android:layout_marginEnd="@dimen/space_5"
+                                                android:text="@string/category_marriage"
+                                                android:textAlignment="center" />
+
+
+                                        </LinearLayout>
+
+                                        <LinearLayout
+                                            android:layout_width="@dimen/space_90"
+                                            android:layout_height="@dimen/space_90"
+                                            android:layout_margin="@dimen/space_10"
+                                            android:background="@drawable/rounded_corner_white_background"
+                                            android:elevation="@dimen/space_5"
+                                            android:orientation="vertical">
+
+                                            <ImageView
+                                                android:layout_width="match_parent"
+                                                android:layout_height="@dimen/space_50"
+                                                android:layout_gravity="center_horizontal"
+                                                android:padding="@dimen/space_10"
+                                                android:src="@drawable/ic_meeting" />
+
+                                            <TextView
+                                                android:layout_width="wrap_content"
+                                                android:layout_height="wrap_content"
+                                                android:layout_gravity="center_horizontal"
+                                                android:layout_marginStart="@dimen/space_5"
+                                                android:layout_marginEnd="@dimen/space_5"
+                                                android:text="@string/category_career_counseling"
+                                                android:textAlignment="center" />
+
+
+                                        </LinearLayout>
+
+                                    </LinearLayout>
+
+                                </HorizontalScrollView>
+                -->
+
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/space_20"
+                android:layout_marginTop="@dimen/space_5"
+                android:layout_marginRight="@dimen/space_20"
+                android:layout_marginBottom="@dimen/space_5"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/proxima_nova_regular"
+                    android:text="@string/your_entry"
+                    android:textSize="12dp" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/proxima_nova_regular"
+                    android:text="@string/type_journal"
+                    android:textColor="@color/colorGrayDark"
+                    android:textSize="12dp" />
+
+                <EditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/space_5"
+                    android:layout_marginEnd="@dimen/space_10"
+                    android:fontFamily="@font/proxima_nova_regular"
+                    android:singleLine="false"
+                    android:text="@={journalFragmentViewModel.journalDescriptionString}" />
+
+
+            </LinearLayout>
+
+
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginBottom="@dimen/space_5"
+                android:background="@drawable/button_gradient"
+                android:enabled="@{!journalFragmentViewModel.showProgressBar}"
+                android:fontFamily="@font/proxima_nova_bold"
+                android:onClick="@{()->journalFragmentViewModel.onSaveEntryClick()}"
+                android:paddingStart="@dimen/space_40"
+                android:paddingEnd="@dimen/space_40"
+                android:text="@string/save_entry"
+                android:textAllCaps="false"
+                android:textColor="@color/colorWhite" />
+
+
+        </LinearLayout>
+
+    </ScrollView>
+</layout>

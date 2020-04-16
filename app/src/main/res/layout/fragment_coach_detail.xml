@@ -1,0 +1,403 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tool="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="viewModel"
+            type="com.example.crispminds.view.dashboard.viewmodel.CoachDetailsFragmentViewModel" />
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <RelativeLayout
+                    android:id="@+id/coach_background_image_view"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/space_100"
+                    android:orientation="vertical">
+
+                    <ImageView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        app:imageUrl="@{viewModel.coachDetailDTO.coachProfileDto.path}"
+                        tool:src="@drawable/ic_coaches"
+                        android:alpha="0.5"/>
+
+                    <LinearLayout
+                        android:id="@+id/book_session_layout"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:layout_alignParentRight="true"
+                        android:layout_alignParentBottom="true"
+                        android:layout_margin="@dimen/space_20"
+                        android:background="@color/colorPrimary">
+
+                        <ImageView
+                            android:id="@+id/book_session_image_view"
+                            android:layout_width="@dimen/space_30"
+                            android:layout_height="@dimen/space_30"
+                            android:layout_alignParentEnd="true"
+                            android:padding="@dimen/space_3"
+                            android:src="@drawable/ic_calender_white" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@+id/book_session_image_view"
+                            android:layout_alignParentEnd="true"
+                            android:layout_marginEnd="@dimen/space_20"
+                            android:fontFamily="@font/proxima_nova_regular"
+                            android:text="@string/book_a_session_new_line"
+                            android:textAlignment="center"
+                            android:layout_gravity="center"
+                            android:textColor="@color/colorWhite"
+                            android:textSize="12dp" />
+
+                    </LinearLayout>
+
+                </RelativeLayout>
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="200dp"
+                    android:layout_marginTop="@dimen/space_100"
+                    android:background="@drawable/background_white_without_bottom_border"
+                    android:orientation="vertical">
+
+
+                </LinearLayout>
+
+                <ImageView
+                    android:id="@+id/coach_image_view"
+                    android:layout_width="@dimen/space_90"
+                    android:layout_height="@dimen/space_90"
+                    android:layout_marginStart="@dimen/space_20"
+                    android:layout_marginTop="@dimen/space_50"
+                    app:imageUrl="@{viewModel.coachDetailDTO.coachProfileDto.path}"
+                    tool:src="@drawable/ic_angry_yellow" />
+
+                <RelativeLayout
+                    android:id="@+id/coach_layout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/coach_background_image_view"
+                    android:layout_marginStart="@dimen/space_10"
+                    android:layout_marginTop="@dimen/space_10"
+                    android:layout_toRightOf="@+id/coach_image_view">
+
+                    <TextView
+                        android:id="@+id/coach_name_text_view"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/proxima_nova_bold"
+                        android:text="@{viewModel.coachDetailDTO.coachName}"
+                        android:textStyle="bold"
+                        tool:text="@string/coaches" />
+
+                    <TextView
+                        android:id="@+id/coach_description_text_view"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/coach_name_text_view"
+                        android:fontFamily="@font/proxima_nova_regular"
+                        android:text="@{viewModel.coachDetailDTO.coachIntro}"
+                        android:textSize="12dp"
+                        tool:text="@string/lorem_ipsum1" />
+
+
+
+                </RelativeLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_below="@+id/coach_layout"
+                    android:layout_marginTop="@dimen/space_10"
+                    android:background="@drawable/background_white_without_top_border"
+                    android:orientation="vertical"
+                    android:padding="@dimen/space_15">
+
+                    <androidx.cardview.widget.CardView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/space_3"
+                        android:layout_marginTop="@dimen/space_3"
+                        android:layout_marginEnd="@dimen/space_3"
+                        android:layout_marginBottom="@dimen/space_10"
+                        android:elevation="@dimen/space_20">
+
+
+                        <RelativeLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:elevation="5dp"
+                            android:paddingTop="@dimen/space_10"
+                            android:paddingRight="@dimen/space_15"
+                            android:paddingBottom="@dimen/space_10">
+
+                            <View
+                                android:layout_width="@dimen/space_5"
+                                android:layout_height="@dimen/space_20"
+                                android:background="@color/colorPrimary" />
+
+                            <TextView
+                                android:id="@+id/about_coach_text_view"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="@dimen/space_20"
+                                android:fontFamily="@font/proxima_nova_bold"
+                                android:text="@string/about_the_coach"
+                                android:textStyle="bold" />
+
+                            <ImageView
+                                android:id="@+id/about_coach_image_view"
+                                android:layout_width="@dimen/space_100"
+                                android:layout_height="@dimen/space_100"
+                                android:layout_below="@+id/about_coach_text_view"
+                                android:layout_marginStart="@dimen/space_10"
+                                android:layout_marginTop="@dimen/space_10"
+                                android:src="@drawable/ic_sad_blue"/>
+
+<!--                            app:youtubeVideoThumbnail="@{viewModel.coachDetailDTO.acf.about_the_coach_video}"-->
+                            <TextView
+                                android:id="@+id/about_coach_description_text_view"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_below="@+id/about_coach_text_view"
+                                android:layout_marginStart="@dimen/space_10"
+                                android:layout_marginTop="@dimen/space_10"
+                                android:layout_marginBottom="@dimen/space_10"
+                                android:layout_toRightOf="@+id/about_coach_image_view"
+                                android:fontFamily="@font/proxima_nova_regular"
+                                android:text="@{viewModel.coachDetailDTO.aboutCoach}"
+                                android:textSize="12dp"
+                                tool:text="@string/lorem_ipsum" />
+
+                        </RelativeLayout>
+
+                    </androidx.cardview.widget.CardView>
+
+                    <androidx.cardview.widget.CardView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/space_3"
+                        android:layout_marginTop="@dimen/space_10"
+                        android:layout_marginEnd="@dimen/space_3"
+                        android:layout_marginBottom="@dimen/space_10"
+                        android:elevation="@dimen/space_20">
+
+
+                        <RelativeLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:elevation="5dp"
+                            android:paddingTop="@dimen/space_10"
+                            android:paddingRight="@dimen/space_15">
+
+                            <View
+                                android:layout_width="@dimen/space_5"
+                                android:layout_height="@dimen/space_20"
+                                android:background="@color/colorPrimary" />
+
+                            <TextView
+                                android:id="@+id/coach_videos_text_view"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="@dimen/space_20"
+                                android:fontFamily="@font/proxima_nova_bold"
+                                android:text="@string/videos"
+                                android:textStyle="bold" />
+
+                            <androidx.recyclerview.widget.RecyclerView
+                                android:id="@+id/coaches_videos_recycler_view"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_below="@+id/coach_videos_text_view"
+                                android:layout_marginStart="@dimen/space_5"
+                                android:orientation="horizontal"
+                                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager" />
+
+                        </RelativeLayout>
+
+                    </androidx.cardview.widget.CardView>
+
+                    <androidx.cardview.widget.CardView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/space_3"
+                        android:layout_marginTop="@dimen/space_10"
+                        android:layout_marginEnd="@dimen/space_3"
+                        android:layout_marginBottom="@dimen/space_10"
+                        android:elevation="@dimen/space_20">
+
+
+                        <RelativeLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:elevation="5dp"
+                            android:paddingTop="@dimen/space_10"
+                            android:paddingRight="@dimen/space_15">
+
+                            <View
+                                android:layout_width="@dimen/space_5"
+                                android:layout_height="@dimen/space_20"
+                                android:background="@color/colorPrimary" />
+
+                            <TextView
+                                android:id="@+id/specialization_text_view"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="@dimen/space_20"
+                                android:fontFamily="@font/proxima_nova_bold"
+                                android:text="@string/specialization"
+                                android:textStyle="bold" />
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_below="@+id/specialization_text_view"
+                                android:layout_marginStart="@dimen/space_20"
+                                android:layout_marginTop="@dimen/space_10"
+                                android:layout_marginBottom="@dimen/space_10">
+
+                                <androidx.recyclerview.widget.RecyclerView
+                                    android:id="@+id/coaches_specialization_recycler_view"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_below="@+id/coach_videos_text_view"
+                                    android:layout_marginStart="@dimen/space_5" />
+
+
+
+                            </LinearLayout>
+
+                        </RelativeLayout>
+
+                    </androidx.cardview.widget.CardView>
+
+                    <androidx.cardview.widget.CardView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/space_3"
+                        android:layout_marginTop="@dimen/space_10"
+                        android:layout_marginEnd="@dimen/space_3"
+                        android:layout_marginBottom="@dimen/space_10"
+                        android:elevation="@dimen/space_20">
+
+
+                        <RelativeLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:elevation="5dp"
+                            android:paddingTop="@dimen/space_10"
+                            android:paddingRight="@dimen/space_15">
+
+                            <View
+                                android:layout_width="@dimen/space_5"
+                                android:layout_height="@dimen/space_20"
+                                android:background="@color/colorPrimary" />
+
+                            <TextView
+                                android:id="@+id/certificates_and_awards_text_view"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="@dimen/space_20"
+                                android:fontFamily="@font/proxima_nova_bold"
+                                android:text="@string/certifications_and_awards"
+                                android:textStyle="bold" />
+
+
+
+                            <androidx.recyclerview.widget.RecyclerView
+                                android:id="@+id/coaches_certificates_recycler_view"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_below="@+id/certificates_and_awards_text_view"
+                                android:layout_marginStart="@dimen/space_5"
+                                android:orientation="horizontal"
+                                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager" />
+
+
+                        </RelativeLayout>
+
+                    </androidx.cardview.widget.CardView>
+
+                    <androidx.cardview.widget.CardView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/space_3"
+                        android:layout_marginTop="@dimen/space_10"
+                        android:layout_marginEnd="@dimen/space_3"
+                        android:layout_marginBottom="@dimen/space_5"
+                        android:elevation="@dimen/space_20">
+
+
+                        <RelativeLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:elevation="5dp"
+                            android:paddingTop="@dimen/space_10"
+                            android:paddingRight="@dimen/space_15">
+
+                            <View
+                                android:layout_width="@dimen/space_5"
+                                android:layout_height="@dimen/space_20"
+                                android:background="@color/colorPrimary" />
+
+                            <TextView
+                                android:id="@+id/testimonial_text_view"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="@dimen/space_20"
+                                android:fontFamily="@font/proxima_nova_bold"
+                                android:text="@string/testimonials"
+                                android:textStyle="bold" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_alignParentEnd="true"
+                                android:layout_marginEnd="@dimen/space_20"
+                                android:text="- - -"
+                                android:textStyle="bold" />
+
+
+                            <androidx.viewpager.widget.ViewPager
+                                android:id="@+id/testimonial_view_pager"
+                                android:layout_width="match_parent"
+                                android:layout_height="@dimen/space_100"
+                                android:layout_below="@+id/testimonial_text_view"
+                                android:layout_marginStart="@dimen/space_20"
+                                android:layout_marginTop="@dimen/space_10"
+                                android:layout_marginEnd="@dimen/space_20"
+                                android:layout_marginBottom="@dimen/space_10" />
+
+                        </RelativeLayout>
+
+                    </androidx.cardview.widget.CardView>
+
+                </LinearLayout>
+
+            </RelativeLayout>
+
+        </ScrollView>
+
+
+    </LinearLayout>
+
+</layout>

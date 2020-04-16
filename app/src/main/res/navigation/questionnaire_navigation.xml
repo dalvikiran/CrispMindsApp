@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto" android:id="@+id/questionnaire_navigation"
+    app:startDestination="@id/areaOfInterestFragment">
+
+    <fragment
+        android:id="@+id/areaOfInterestFragment"
+        android:name="com.example.crispminds.view.questionnaire.frgments.AreaOfInterestFragment"
+        android:label="AreaOfInterestFragment" >
+        <action
+            android:id="@+id/action_areaOfInterestFragment_to_servicesToInterestFragment"
+            app:destination="@id/servicesToInterestFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/servicesToInterestFragment"
+        android:name="com.example.crispminds.view.questionnaire.frgments.ServicesToInterestFragment"
+        android:label="ServicesToInterestFragment" >
+        <action
+            android:id="@+id/action_servicesToInterestFragment_to_frequentExpensesFragment"
+            app:destination="@id/frequentExpensesFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/frequentExpensesFragment"
+        android:name="com.example.crispminds.view.questionnaire.frgments.FrequentExpensesFragment"
+        android:label="FrequentExpensesFragment" />
+</navigation>

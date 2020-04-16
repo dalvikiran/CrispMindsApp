@@ -1,0 +1,151 @@
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tool="http://schemas.android.com/tools">
+
+    <data>
+
+        <import type="android.view.View" />
+
+        <variable
+            name="viewModel"
+            type="com.example.crispminds.viewmodels.LoginViewModel" />
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_margin="@dimen/space_20"
+        android:orientation="vertical">
+
+
+        <EditText
+            style="@style/cardEditTextStyle"
+            android:drawableEnd="@drawable/ic_user"
+            android:hint="@string/email"
+            android:text="@={viewModel.email}" />
+
+        <TextView
+            style="@style/errorTextStyle"
+            context="@{viewModel.context}"
+            errorText="@{viewModel.emailErrorMsg}"
+            android:visibility="@{viewModel.emailErrorMsg.empty? View.INVISIBLE : View.VISIBLE}"
+            tool:text="Error" />
+
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/layoutTextInput"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_marginStart="@dimen/space_5"
+            android:layout_marginTop="@dimen/space_10"
+            android:layout_marginEnd="@dimen/space_5"
+            android:background="@drawable/edit_text_background"
+            android:elevation="5dp"
+            app:hintEnabled="false"
+            app:passwordToggleDrawable="@drawable/show_password_selector"
+            app:passwordToggleEnabled="true"
+            app:passwordToggleTint="@color/colorPrimary">
+
+            <androidx.appcompat.widget.AppCompatEditText
+                android:id="@+id/editTextValue"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:background="@null"
+                android:fontFamily="@font/proxima_nova_regular"
+                android:hint="@string/password"
+                android:imeOptions="actionNext"
+                android:inputType="textPassword"
+                android:paddingStart="@dimen/space_20"
+                android:paddingEnd="@dimen/space_15"
+                android:text="@={viewModel.password}" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+
+        <TextView
+            style="@style/errorTextStyle"
+            context="@{viewModel.context}"
+            errorText="@{viewModel.passErrorMsg}"
+            android:visibility="@{viewModel.passErrorMsg.empty? View.INVISIBLE : View.VISIBLE}"
+            tool:text="Error" />
+
+        <!--
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <EditText
+                            android:layout_width="match_parent"
+                            android:layout_height="50dp"
+                            android:layout_marginStart="@dimen/space_5"
+                            android:layout_marginTop="@dimen/space_10"
+                            android:layout_marginEnd="@dimen/space_5"
+                            android:layout_marginBottom="@dimen/space_5"
+                            android:background="@drawable/edit_text_background"
+                            android:elevation="5dp"
+                            android:fontFamily="@font/proxima_nova_regular"
+                            android:hint="@string/password"
+                            android:inputType="@{viewModel.isPasswordVisible? InputType.TYPE_CLASS_TEXT : (InputType.TYPE_CLASS_TEXT | InputType.TYPE_TEXT_VARIATION_PASSWORD) }"
+                            android:paddingStart="@dimen/space_20"
+                            android:paddingEnd="@dimen/space_20"
+                            android:singleLine="true"
+                            android:text="@={viewModel.password}" />
+                    </LinearLayout>
+
+                    <ImageView
+                        android:layout_width="@dimen/space_30"
+                        android:layout_height="@dimen/space_30"
+                        android:layout_alignParentRight="true"
+                        android:layout_centerVertical="true"
+                        android:layout_marginRight="@dimen/space_20"
+                        android:background="@{viewModel.passwordDrawable}"
+                        android:onClick="@{()->viewModel.onPasswordToggleClick()}" />
+                </RelativeLayout>
+        -->
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="end"
+            android:layout_marginTop="@dimen/space_20"
+            android:onClick="@{()->viewModel.onForgotPasswordClick()}"
+            android:fontFamily="@font/proxima_nova_regular"
+            android:text="@string/forgot_password" />
+
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/space_20"
+            android:background="@drawable/button_gradient"
+            android:fontFamily="@font/proxima_nova_bold"
+            android:onClick="@{()->viewModel.onLoginClick()}"
+            android:text="@string/login"
+            android:textColor="@color/colorWhite" />
+
+        <TextView
+            android:id="@+id/dont_have_acc_txt"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="@dimen/space_10"
+            android:fontFamily="@font/proxima_nova_regular"
+            android:onClick="@{() -> viewModel.onRegisterClick()}"
+            android:text="@string/dont_have_account" />
+
+        <TextView
+            android:id="@+id/terms_and_privacy_txt"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="@dimen/space_20"
+            android:fontFamily="@font/proxima_nova_regular"
+            android:text="@string/terms_and_privacy_text" />
+
+
+    </LinearLayout>
+
+</layout>
